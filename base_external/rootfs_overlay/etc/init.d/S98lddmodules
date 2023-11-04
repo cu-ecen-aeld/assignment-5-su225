@@ -1,0 +1,32 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:             misc-modules
+# Required-Start:
+# Required-Stop:
+# Default-Start:        S
+# Default-Stop:
+### END INIT INFO
+
+modules=( scull faulty )
+
+case "$1" in
+  start)
+    for m in "${modules[@]}"; do
+      echo "loading ${m}"
+      /bin/${m}_load.sh
+    done
+    ;;
+  stop)
+    echo "unloading custom kernel modules"
+    for m in "${modules[@]}"; do
+      echo "unloading ${m}"
+      /bin/${m}_unload.sh
+    done
+    ;;
+  *)
+    echo "Usage $0 {start|stop}"
+  exit 1;
+esac
+
+exit 0;

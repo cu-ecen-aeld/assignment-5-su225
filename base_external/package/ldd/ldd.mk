@@ -14,6 +14,8 @@ LDD_SITE = 'git@github.com:cu-ecen-aeld/assignment-7-su225.git'
 LDD_SITE_METHOD = git
 LDD_GIT_SUBMODULES = YES
 
+LDD_MODULE_SUBDIRS = misc-modules
+
 define LDD_BUILD_CMDS
 	$(MAKE) modules
 endef
