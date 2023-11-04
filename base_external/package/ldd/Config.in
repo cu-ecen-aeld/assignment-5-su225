@@ -3,4 +3,4 @@ config BR2_PACKAGE_LDD
 	bool "ldd"
 	help
 	  Includes the Linux kernel modules representing the faulty and
-    the scull device driver from LDD book (Linux Device Drivers)
+		the scull device driver from LDD book (Linux Device Drivers)
