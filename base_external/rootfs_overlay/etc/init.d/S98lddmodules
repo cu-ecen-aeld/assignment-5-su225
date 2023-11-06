@@ -8,20 +8,25 @@
 # Default-Stop:
 ### END INIT INFO
 
-modules="scull faulty"
+modules="hello faulty"
 
 case "$1" in
   start)
+    echo "loading custom kernel modules"
+    echo "loading scull"
+    /bin/scull_load.sh
     for m in ${modules}; do
       echo "loading ${m}"
-      /bin/${m}_load.sh
+      /bin/module_load.sh $m
     done
     ;;
   stop)
     echo "unloading custom kernel modules"
+    echo "unloading scull"
+    /bin/scull_unload.sh
     for m in ${modules}; do
       echo "unloading ${m}"
-      /bin/${m}_unload.sh
+      /bin/module_unload.sh $m
     done
     ;;
   *)

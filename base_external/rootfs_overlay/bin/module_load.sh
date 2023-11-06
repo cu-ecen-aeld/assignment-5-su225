@@ -1,9 +1,16 @@
 #!/bin/sh
-module="faulty"
+module="$1"
 # Use the same name for the device as the name used for the module
-device="faulty"
+device="$1"
 # Support read/write for owner and group, read only for everyone using 644
 mode="664"
+
+if [ $# -ne 1 ]; then
+	echo "Wrong number of arguments"
+	echo "usage: $0 module_name"
+	echo "Will create a corresponding device /dev/module_name associated with module_name.ko"
+	exit 1
+fi
 
 set -e
 # Group: since distributions do it differently, look for wheel or use staff

@@ -1,6 +1,6 @@
 #!/bin/sh
-module="faulty"
-device="faulty"
+module="$1"
+device="$2"
 
 # invoke rmmod with all arguments we got
 rmmod $module $* || exit 1
