@@ -17,13 +17,5 @@ LDD_GIT_SUBMODULES = YES
 LDD_MODULE_SUBDIRS = misc-modules
 LDD_MODULE_SUBDIRS += scull
 
-# define LDD_BUILD_CMDS
-# 	KERNELRELEASE=$(LINUX_VERSION) ARCH=$(KERNEL_ARCH) $(MAKE) -C $(@D)/misc-modules
-# endef
-
-# define LDD_INSTALL_TARGET_CMDS
-# 	KERNELRELEASE=$(LINUX_VERSION) ARCH=$(KERNEL_ARCH) $(MAKE) -C $(@D)/misc-modules modules_install
-# endef
-
 $(eval $(kernel-module))
 $(eval $(generic-package))
